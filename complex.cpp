@@ -14,50 +14,50 @@ bool read(istream & stream, complex_t & complex) {
     bool r = true;
     double r2, i2;
     if (stream >> op && op == '(' &&
-    stream >> r2 &&
-    stream >> op && op == ',' &&
-    stream >> i2 &&
-    stream>> op && op == ')') {
+   	stream >> r2 &&
+    	stream >> op && op == ',' &&
+    	stream >> i2 &&
+    	stream>> op && op == ')') {
         complex.real = r2;
         complex.imag = i2;
     }
-    else {r = false; cout << "An error has occured while reading input data";}
-    return r;
+    	else {r = false; cout << "An error has occured while reading input data";}
+    	return r;
 }
    ostream & write( ostream & stream, complex_t complex ) {
     (stream << '(' << complex.real << ',' << complex.imag << ')' << endl);
-    
 }
+
    complex_t sum(complex_t r1, complex_t i1) 
     {
-    complex_t complex;
-    complex.real = r1.real + i1.real;
-    complex.imag = r1.imag + i1.imag;
-    return complex;
+    	complex_t complex;
+    	complex.real = r1.real + i1.real;
+    	complex.imag = r1.imag + i1.imag;
+    	return complex;
     }
     
     complex_t sub(complex_t r1, complex_t i1) 
     {
-    complex_t complex;
-    complex.real = r1.real - i1.real;
-    complex.imag = r1.imag - i1.imag;
-    return complex;
+    	complex_t complex;
+    	complex.real = r1.real - i1.real;
+    	complex.imag = r1.imag - i1.imag;
+   	return complex;
     }
     
     complex_t mul(complex_t r1, complex_t i1) 
     {
-    complex_t complex;
-    complex.real = r1.real * i1.real - r1.imag * i1.imag;
-    complex.imag = r1.imag * i1.real + r1.real * i1.imag;
-    return complex;
+    	complex_t complex;
+    	complex.real = r1.real * i1.real - r1.imag * i1.imag;
+    	complex.imag = r1.imag * i1.real + r1.real * i1.imag;
+    	return complex;
     }
 
     complex_t div(complex_t r1, complex_t i1) 
     {
-    complex_t complex;
-    complex.real = (r1.real * i1.real + r1.imag * i1.imag)/(i1.real * i1.real + i1.imag * i1.imag);
-    complex.imag = (r1.imag * i1.real - r1.real * i1.imag)/(i1.real * i1.real + i1.imag * i1.imag);
-    return complex;
+    	complex_t complex;
+    	complex.real = (r1.real * i1.real + r1.imag * i1.imag)/(i1.real * i1.real + i1.imag * i1.imag);
+    	complex.imag = (r1.imag * i1.real - r1.real * i1.imag)/(i1.real * i1.real + i1.imag * i1.imag);
+    	return complex;
     }
     
 int main()
